@@ -9,14 +9,14 @@ class DateTimePickerBottomSheet extends StatefulWidget {
   State<StatefulWidget> createState() => _DateTimePickerBottomSheetState();
 }
 
-const String MIN_DATETIME = '2019-05-15 09:23:10';
+const String MIN_DATETIME = '2010-05-15 09:23:10';
 const String MAX_DATETIME = '2019-06-03 21:11:00';
 const String INIT_DATETIME = '2019-05-16 09:00:00';
 
 class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
   bool _showTitle = true;
 
-  String _format = 'yy年M月d日    EEE,H时:m分';
+  String _format = 'yyyy年-M月-d日  H时:m分';
   TextEditingController _formatCtrl = TextEditingController();
 
   DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
