@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+import 'package:flutter_cupertino_datetime_picker/flutter_cupertino_date_picker.dart';
 
 class DateTimePickerBottomSheet extends StatefulWidget {
   DateTimePickerBottomSheet({Key key}) : super(key: key);
