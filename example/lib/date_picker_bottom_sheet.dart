@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_datetime_picker/flutter_cupertino_datetime_picker.dart';
 
 class DatePickerBottomSheet extends StatefulWidget {
-  DatePickerBottomSheet({Key key}) : super(key: key);
+  DatePickerBottomSheet({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _DatePickerBottomSheetState();
@@ -14,15 +14,15 @@ const String MAX_DATETIME = '2021-11-25';
 const String INIT_DATETIME = '2019-05-17';
 
 class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
-  bool _showTitle = true;
+  bool? _showTitle = true;
 
-  DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
+  DateTimePickerLocale? _locale = DateTimePickerLocale.en_us;
   List<DateTimePickerLocale> _locales = DateTimePickerLocale.values;
 
   String _format = 'yyyy-MMMM-dd';
   TextEditingController _formatCtrl = TextEditingController();
 
-  DateTime _dateTime;
+  DateTime? _dateTime;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
   @override
   Widget build(BuildContext context) {
     // create locale radio list
-    List<Widget> radios = List<Widget>();
+    List<Widget> radios = [];
     _locales.forEach((locale) {
       radios.add(Container(
         margin: EdgeInsets.only(right: 8.0),
@@ -44,7 +44,7 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
             Radio(
               value: locale,
               groupValue: _locale,
-              onChanged: (value) {
+              onChanged: (dynamic value) {
                 setState(() {
                   _locale = value;
                 });
@@ -59,7 +59,7 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
     });
 
     TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+        Theme.of(context).textTheme.subhead!.apply(color: Color(0xFF999999));
     return Scaffold(
       appBar: AppBar(title: Text('DatePicker Bottom Sheet')),
       body: Container(
@@ -162,7 +162,7 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
                   Container(
                     padding: EdgeInsets.only(left: 12.0),
                     child: Text(
-                      '${_dateTime.year}-${_dateTime.month.toString().padLeft(2, '0')}-${_dateTime.day.toString().padLeft(2, '0')}',
+                      '${_dateTime!.year}-${_dateTime!.month.toString().padLeft(2, '0')}-${_dateTime!.day.toString().padLeft(2, '0')}',
                       style: Theme.of(context).textTheme.title,
                     ),
                   ),
@@ -187,14 +187,14 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
       context,
       onMonthChangeStartWithFirstDate: true,
       pickerTheme: DateTimePickerTheme(
-        showTitle: _showTitle,
+        showTitle: _showTitle!,
         confirm: Text('custom Done', style: TextStyle(color: Colors.red)),
       ),
       minDateTime: DateTime.parse(MIN_DATETIME),
       maxDateTime: DateTime.parse(MAX_DATETIME),
       initialDateTime: _dateTime,
       dateFormat: _format,
-      locale: _locale,
+      locale: _locale!,
       onClose: () => print("----- onClose -----"),
       onCancel: () => print('onCancel'),
       onChange: (dateTime, List<int> index) {

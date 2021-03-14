@@ -1,6 +1,6 @@
 name: flutter_cupertino_datetime_picker
 description: Fork from flutter_cupertino_date_picker https://github.com/wuzhendev/flutter-cupertino-date-picker, but year, month, day seperate
-version: 1.0.3
+version: 2.0.0
 homepage: https://github.com/ykrank/flutter_cupertino_datetime_picker
 
 dependencies:
@@ -10,5 +10,5 @@ dependencies:
 flutter:
 
 environment:
-  sdk: ">=1.19.0 <3.0.0"
-  flutter: ">=0.4.1 <2.0.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: ">=0.4.1"

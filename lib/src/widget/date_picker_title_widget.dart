@@ -10,11 +10,11 @@ import '../i18n/date_picker_i18n.dart';
 /// @since 2019-05-16
 class DatePickerTitleWidget extends StatelessWidget {
   DatePickerTitleWidget({
-    Key key,
-    this.pickerTheme,
-    this.locale,
-    @required this.onCancel,
-    @required this.onConfirm,
+    Key? key,
+    required this.pickerTheme,
+    required this.locale,
+    required this.onCancel,
+    required this.onConfirm,
   }) : super(key: key);
 
   final DateTimePickerTheme pickerTheme;
@@ -24,7 +24,7 @@ class DatePickerTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (pickerTheme.title != null) {
-      return pickerTheme.title;
+      return pickerTheme.title!;
     }
     return Container(
       height: pickerTheme.titleHeight,
@@ -48,12 +48,12 @@ class DatePickerTitleWidget extends StatelessWidget {
       }
     }
 
-    Widget cancelWidget = pickerTheme.cancel;
+    Widget? cancelWidget = pickerTheme.cancel;
     if (cancelWidget == null) {
       TextStyle textStyle = pickerTheme.cancelTextStyle ??
           TextStyle(
             color: Theme.of(context).unselectedWidgetColor,
-            fontSize: 16.0,
+            fontSize: 17.0,
           );
       cancelWidget = Text(
         DatePickerI18n.getLocaleCancel(locale),
@@ -80,12 +80,12 @@ class DatePickerTitleWidget extends StatelessWidget {
       }
     }
 
-    Widget confirmWidget = pickerTheme.confirm;
+    Widget? confirmWidget = pickerTheme.confirm;
     if (confirmWidget == null) {
       TextStyle textStyle = pickerTheme.confirmTextStyle ??
           TextStyle(
             color: Theme.of(context).primaryColor,
-            fontSize: 16.0,
+            fontSize: 17.0,
           );
       confirmWidget = Text(
         DatePickerI18n.getLocaleDone(locale),
