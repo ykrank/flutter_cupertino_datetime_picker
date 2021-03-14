@@ -59,7 +59,7 @@ class _StringsBn extends _StringsI18n {
   }
 
   @override
-  List<String> getMonthsShort() {
+  List<String>? getMonthsShort() {
     // TODO: implement getMonthsShort
     return null;
   }

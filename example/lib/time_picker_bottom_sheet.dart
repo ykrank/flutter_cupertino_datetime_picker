@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_datetime_picker/flutter_cupertino_datetime_picker.dart';
 
 class TimePickerBottomSheet extends StatefulWidget {
-  TimePickerBottomSheet({Key key}) : super(key: key);
+  TimePickerBottomSheet({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TimePickerBottomSheetState();
@@ -17,7 +17,7 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
   String _format = 'HH:mm';
   TextEditingController _formatCtrl = TextEditingController();
 
-  DateTime _dateTime;
+  late DateTime _dateTime;
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
   @override
   Widget build(BuildContext context) {
     TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+        Theme.of(context).textTheme.subhead!.apply(color: Color(0xFF999999));
     return Scaffold(
       appBar: AppBar(title: Text('TimePicker Bottom Sheet')),
       body: Container(
