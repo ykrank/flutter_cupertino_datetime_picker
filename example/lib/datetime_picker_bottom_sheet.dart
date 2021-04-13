@@ -37,7 +37,7 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
       context,
       minDateTime: DateTime.parse(MIN_DATETIME),
       maxDateTime: DateTime.parse(MAX_DATETIME),
-      initialDateTime: DateTime.parse(INIT_DATETIME),
+      initialDateTime: _dateTime,
       dateFormat: _format,
       locale: _locale!,
       pickerTheme: DateTimePickerTheme(
