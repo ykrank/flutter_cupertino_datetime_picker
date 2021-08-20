@@ -26,6 +26,8 @@ part 'strings_ru.dart';
 
 part 'strings_de.dart';
 
+part 'strings_cs.dart';
+
 part 'strings_ko.dart';
 
 part 'strings_it.dart';
@@ -116,6 +118,9 @@ enum DateTimePickerLocale {
   /// German (DE)
   de,
 
+  /// Czech (CS)
+  cs,
+
   /// Korea (KO)
   ko,
 
@@ -163,6 +168,7 @@ const Map<DateTimePickerLocale, _StringsI18n> datePickerI18n = {
   DateTimePickerLocale.jp: const _StringsJp(),
   DateTimePickerLocale.ru: const _StringsRu(),
   DateTimePickerLocale.de: const _StringsDe(),
+  DateTimePickerLocale.cs: const _StringsCs(),
   DateTimePickerLocale.ko: const _StringsKo(),
   DateTimePickerLocale.it: const _StringsIt(),
   DateTimePickerLocale.hu: const _StringsHu(),
