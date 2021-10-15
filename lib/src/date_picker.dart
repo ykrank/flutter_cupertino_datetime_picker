@@ -72,13 +72,11 @@ class DatePicker {
       // Check whether date format is legal or not
       if (DateTimeFormatter.isDayFormat(dateFormat)) {
         if (pickerMode == DateTimePickerMode.time) {
-          pickerMode = DateTimeFormatter.isTimeFormat(dateFormat)
-              ? DateTimePickerMode.datetime
-              : DateTimePickerMode.date;
+          pickerMode =
+              DateTimeFormatter.isTimeFormat(dateFormat) ? DateTimePickerMode.datetime : DateTimePickerMode.date;
         }
       } else {
-        if (pickerMode == DateTimePickerMode.date ||
-            pickerMode == DateTimePickerMode.datetime) {
+        if (pickerMode == DateTimePickerMode.date || pickerMode == DateTimePickerMode.datetime) {
           pickerMode = DateTimePickerMode.time;
         }
       }
@@ -101,8 +99,7 @@ class DatePicker {
         onChange: onChange,
         onConfirm: onConfirm,
         theme: Theme.of(context),
-        barrierLabel:
-            MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
         minuteDivider: minuteDivider,
       ),
     ).whenComplete(onClose ?? () => {});
@@ -159,14 +156,12 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
   AnimationController createAnimationController() {
     assert(_animationController == null);
     assert(navigator?.overlay != null);
-    _animationController =
-        BottomSheet.createAnimationController(navigator!.overlay!);
+    _animationController = BottomSheet.createAnimationController(navigator!.overlay!);
     return _animationController!;
   }
 
   @override
-  Widget buildPage(BuildContext context, Animation<double> animation,
-      Animation<double> secondaryAnimation) {
+  Widget buildPage(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
     double height = pickerTheme.pickerHeight;
     if (pickerTheme.title != null || pickerTheme.showTitle) {
       height += pickerTheme.titleHeight;
@@ -178,9 +173,7 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
       child: _DatePickerComponent(route: this, pickerHeight: height),
     );
 
-    if (theme != null) {
-      bottomSheet = new Theme(data: theme, child: bottomSheet);
-    }
+    bottomSheet = new Theme(data: theme, child: bottomSheet);
     return bottomSheet;
   }
 }
@@ -190,7 +183,8 @@ class _DatePickerComponent extends StatelessWidget {
   final double _pickerHeight;
 
   _DatePickerComponent({Key? key, required this.route, required pickerHeight})
-      : this._pickerHeight = pickerHeight;
+      : this._pickerHeight = pickerHeight,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -198,8 +192,7 @@ class _DatePickerComponent extends StatelessWidget {
     switch (route.pickerMode) {
       case DateTimePickerMode.date:
         pickerWidget = DatePickerWidget(
-          onMonthChangeStartWithFirstDate:
-              route.onMonthChangeStartWithFirstDate,
+          onMonthChangeStartWithFirstDate: route.onMonthChangeStartWithFirstDate,
           minDateTime: route.minDateTime,
           maxDateTime: route.maxDateTime,
           initialDateTime: route.initialDateTime,
@@ -246,8 +239,7 @@ class _DatePickerComponent extends StatelessWidget {
         builder: (BuildContext context, Widget? child) {
           return new ClipRect(
             child: new CustomSingleChildLayout(
-              delegate: new _BottomPickerLayout(route.animation!.value,
-                  contentHeight: _pickerHeight),
+              delegate: new _BottomPickerLayout(route.animation!.value, contentHeight: _pickerHeight),
               child: pickerWidget,
             ),
           );

@@ -20,6 +20,7 @@ class TimePickerWidget extends StatefulWidget {
     this.maxDateTime,
     this.initDateTime,
     this.dateFormat: DATETIME_PICKER_TIME_FORMAT,
+    this.dateFormatSeparator: DATE_FORMAT_SEPARATOR,
     this.locale: DATETIME_PICKER_LOCALE_DEFAULT,
     this.pickerTheme: DateTimePickerTheme.Default,
     this.minuteDivider = 1,
@@ -34,6 +35,7 @@ class TimePickerWidget extends StatefulWidget {
 
   final DateTime? minDateTime, maxDateTime, initDateTime;
   final String dateFormat;
+  final String dateFormatSeparator;
   final DateTimePickerLocale locale;
   final DateTimePickerTheme pickerTheme;
   final DateVoidCallback? onCancel;
@@ -198,7 +200,7 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
   Widget _renderDatePickerWidget() {
     List<Widget> pickers = [];
     List<String> formatArr =
-        DateTimeFormatter.splitDateFormat(widget.dateFormat);
+        DateTimeFormatter.splitDateFormat(widget.dateFormat, dateFormatSeparator: widget.dateFormatSeparator);
     formatArr.forEach((format) {
       List<int> valueRange = _findPickerItemRange(format);
 
