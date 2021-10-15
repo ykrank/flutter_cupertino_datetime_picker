@@ -43,6 +43,7 @@ class DateTimePickerTheme with Diagnosticable {
     this.cancel,
     this.confirm,
     this.title,
+    this.selectionOverlay,
     this.showTitle: DATETIME_PICKER_SHOW_TITLE_DEFAULT,
     this.pickerHeight: DATETIME_PICKER_HEIGHT,
     this.titleHeight: DATETIME_PICKER_TITLE_HEIGHT,
@@ -69,6 +70,9 @@ class DateTimePickerTheme with Diagnosticable {
 
   /// Custom title [Widget]. If specify a title widget, the cancel and confirm widgets will not display.
   final Widget? title;
+
+  /// Custom selection Overlay [Widget]. If specify a selection widget, the default will be overwritten.
+  final Widget? selectionOverlay;
 
   /// Whether display title widget or not. If set false, the default cancel and confirm widgets will not display, but the custom title widget will display if had specified one custom title widget.
   final bool showTitle;
