@@ -1,6 +1,6 @@
 # Flutter Cupertino Date Picker
 
-[[Pub Packages]](https://pub.dartlang.org/packages/flutter_cupertino_date_picker)
+<a href="https://pub.dev/packages/flutter_cupertino_datetime_picker"><img src="https://img.shields.io/pub/v/flutter_cupertino_datetime_picker.svg" alt="Pub"></a>
 
 Flutter 的日期选择器控件，iOS 样式。
 
