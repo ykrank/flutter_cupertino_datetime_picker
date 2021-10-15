@@ -1,6 +1,7 @@
 # Flutter Cupertino DateTime Picker
 
-[[pub packages]](https://pub.dev/packages/flutter_cupertino_datetime_picker)
+<a href="https://pub.dev/packages/flutter_cupertino_datetime_picker"><img src="https://img.shields.io/pub/v/flutter_cupertino_datetime_picker.svg" alt="Pub"></a>
+
 | [中文说明](./README_zh-cn.md)
 
 Flutter cupertino datetime picker.
