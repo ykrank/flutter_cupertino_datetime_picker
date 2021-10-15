@@ -196,8 +196,8 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   /// pressed confirm widget
   void _onPressedConfirm() {
     if (widget.onConfirm != null) {
-      DateTime dateTime =
-          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
+      DateTime dateTime = DateTime(
+          _currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
       widget.onConfirm!(dateTime, _calcSelectIndexList());
     }
     Navigator.pop(context);
@@ -206,8 +206,8 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   /// notify selected datetime changed
   void _onSelectedChange() {
     if (widget.onChange != null) {
-      DateTime dateTime =
-          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
+      DateTime dateTime = DateTime(
+          _currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
       widget.onChange!(dateTime, _calcSelectIndexList());
     }
   }
@@ -243,8 +243,9 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   /// render the picker widget of year、month and day
   Widget _renderDatePickerWidget() {
     List<Widget> pickers = [];
-    List<String> formatArr =
-        DateTimeFormatter.splitDateFormat(widget.dateFormat, dateFormatSeparator: widget.dateFormatSeparator);
+    List<String> formatArr = DateTimeFormatter.splitDateFormat(
+        widget.dateFormat,
+        dateFormatSeparator: widget.dateFormatSeparator);
     formatArr.forEach((format) {
       List<int> valueRange = _findPickerItemRange(format);
 

@@ -1,3 +1,12 @@
+## 3.0.0
+Refactor all picker.
+
+Break change:
+- onMonthChangeStartWithFirstDate now match name.
+- Result datetime keep all initDataTime value except scrolled, so you should self defined initDataTime but not DateTime.now()
+
+Fix issue 6, 8
+
 ## 2.0.1
 
 - Fix issue 4 https://github.com/ykrank/flutter_cupertino_datetime_picker/issues/4
