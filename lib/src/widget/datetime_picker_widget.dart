@@ -11,9 +11,6 @@ import 'date_picker_title_widget.dart';
 import 'date_picker_widget.dart';
 
 /// DateTimePicker widget. Can display date and time picker.
-///
-/// @author dylan wu
-/// @since 2019-05-10
 class DateTimePickerWidget extends StatefulWidget {
   DateTimePickerWidget({
     Key? key,
@@ -200,7 +197,7 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   void _onPressedConfirm() {
     if (widget.onConfirm != null) {
       DateTime dateTime =
-          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, 0);
+          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
       widget.onConfirm!(dateTime, _calcSelectIndexList());
     }
     Navigator.pop(context);
@@ -210,7 +207,7 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   void _onSelectedChange() {
     if (widget.onChange != null) {
       DateTime dateTime =
-          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, 0);
+          DateTime(_currYear, _currMonth, _currDay, _currHour, _currMinute, _currSecond);
       widget.onChange!(dateTime, _calcSelectIndexList());
     }
   }
@@ -267,6 +264,8 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
             _changeHourSelection(value);
           } else if (format.contains('m')) {
             _changeMinuteSelection(value);
+          } else if (format.contains('s')) {
+            _changeSecondSelection(value);
           }
         },
       );
@@ -395,6 +394,15 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
     }
   }
 
+  /// change the selection of second picker
+  void _changeSecondSelection(int index) {
+    int value = _secondRange.first + index;
+    if (_currSecond != value) {
+      _currSecond = value;
+      _onSelectedChange();
+    }
+  }
+
   /// change range of minute and second
   void _changeTimeRange() {
     if (_isChangeTimeRange) {
@@ -415,7 +423,7 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
         _dayRange.first != dayRange.first || _dayRange.last != dayRange.last;
     if (dayRangeChanged) {
       // day range changed, need limit the value of selected day
-      if (widget.onMonthChangeStartWithFirstDate) {
+      if (!widget.onMonthChangeStartWithFirstDate) {
         max(min(_currDay, dayRange.last), dayRange.first);
       } else {
         _currDay = dayRange.first;
@@ -438,16 +446,26 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
       _currMinute = max(min(_currMinute, minuteRange.last), minuteRange.first);
     }
 
+    List<int> secondRange = _calcSecondRange();
+    bool secondRangeChanged = _secondRange.first != secondRange.first ||
+        _secondRange.last != secondRange.last;
+    if (secondRangeChanged) {
+      // second range changed, need limit the value of selected second
+      _currSecond = max(min(_currSecond, secondRange.last), secondRange.first);
+    }
+
     setState(() {
       _monthRange = monthRange;
       _dayRange = dayRange;
       _hourRange = hourRange;
       _minuteRange = minuteRange;
+      _secondRange = secondRange;
 
       _valueRangeMap['M'] = monthRange;
       _valueRangeMap['d'] = dayRange;
       _valueRangeMap['H'] = hourRange;
       _valueRangeMap['m'] = minuteRange;
+      _valueRangeMap['s'] = secondRange;
     });
 
     if (monthRangeChanged) {
@@ -484,6 +502,15 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
           .jumpToItem((minuteRange.last - minuteRange.first) ~/ _minuteDivider);
       if (currMinute < minuteRange.last) {
         _minuteScrollCtrl.jumpToItem(currMinute - minuteRange.first);
+      }
+    }
+
+    if (secondRangeChanged) {
+      // CupertinoPicker refresh data not working (https://github.com/flutter/flutter/issues/22999)
+      int currSecond = _currSecond;
+      _secondScrollCtrl.jumpToItem(secondRange.last - secondRange.first);
+      if (currSecond < secondRange.last) {
+        _secondScrollCtrl.jumpToItem(currSecond - secondRange.first);
       }
     }
 

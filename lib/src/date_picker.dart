@@ -191,33 +191,7 @@ class _DatePickerComponent extends StatelessWidget {
     Widget? pickerWidget;
     switch (route.pickerMode) {
       case DateTimePickerMode.date:
-        pickerWidget = DatePickerWidget(
-          onMonthChangeStartWithFirstDate: route.onMonthChangeStartWithFirstDate,
-          minDateTime: route.minDateTime,
-          maxDateTime: route.maxDateTime,
-          initialDateTime: route.initialDateTime,
-          dateFormat: route.dateFormat,
-          locale: route.locale,
-          pickerTheme: route.pickerTheme,
-          onCancel: route.onCancel,
-          onChange: route.onChange,
-          onConfirm: route.onConfirm,
-        );
-        break;
       case DateTimePickerMode.time:
-        pickerWidget = TimePickerWidget(
-          minDateTime: route.minDateTime,
-          maxDateTime: route.maxDateTime,
-          initDateTime: route.initialDateTime,
-          dateFormat: route.dateFormat,
-          locale: route.locale,
-          pickerTheme: route.pickerTheme,
-          onCancel: route.onCancel,
-          onChange: route.onChange,
-          onConfirm: route.onConfirm,
-          minuteDivider: route.minuteDivider,
-        );
-        break;
       case DateTimePickerMode.datetime:
         pickerWidget = DateTimePickerWidget(
           minDateTime: route.minDateTime,
@@ -230,6 +204,7 @@ class _DatePickerComponent extends StatelessWidget {
           onChange: route.onChange,
           onConfirm: route.onConfirm,
           minuteDivider: route.minuteDivider,
+          onMonthChangeStartWithFirstDate: route.onMonthChangeStartWithFirstDate,
         );
         break;
     }

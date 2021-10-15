@@ -149,7 +149,7 @@ DateTimePickerTheme(
               child: DatePickerWidget(
                 minDateTime: DateTime.parse(MIN_DATETIME),
                 maxDateTime: DateTime.parse(MAX_DATETIME),
-                initialDateTime: DateTime.parse(INIT_DATETIME),
+                initDateTime: DateTime.parse(INIT_DATETIME),
                 dateFormat: DATE_FORMAT,
                 pickerTheme: DateTimePickerTheme(
                   backgroundColor: Color(0xFFb2dfdb),

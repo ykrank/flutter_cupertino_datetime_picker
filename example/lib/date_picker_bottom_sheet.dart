@@ -10,8 +10,8 @@ class DatePickerBottomSheet extends StatefulWidget {
 }
 
 const String MIN_DATETIME = '2010-05-12';
-const String MAX_DATETIME = '2021-11-25';
-const String INIT_DATETIME = '2019-05-17';
+const String MAX_DATETIME = '2030-11-25';
+const String INIT_DATETIME = '2021-08-31';
 
 class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
   bool? _showTitle = true;

@@ -16,7 +16,7 @@ const String INIT_DATETIME = '2019-05-16 09:00:00';
 class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
   bool? _showTitle = true;
 
-  String _format = 'yyyy年-M月-d日  H时:m分';
+  String _format = 'yyyy-M月-d日  H时:m分:s';
   TextEditingController _formatCtrl = TextEditingController();
 
   DateTimePickerLocale? _locale = DateTimePickerLocale.zh_cn;
