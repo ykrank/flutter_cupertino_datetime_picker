@@ -618,7 +618,7 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
     if (_currYear == _maxTime.year &&
         _currMonth == _maxTime.month &&
         _currDay == _maxTime.day &&
-        _currHour == _minTime.hour) {
+        _currHour == _maxTime.hour) {
       // selected maximum day、hour, limit minute range
       maxMinute = _maxTime.minute;
     }
@@ -647,8 +647,8 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
     if (_currYear == _maxTime.year &&
         _currMonth == _maxTime.month &&
         _currDay == _maxTime.day &&
-        _currHour == _minTime.hour &&
-        _currMinute == _minTime.minute) {
+        _currHour == _maxTime.hour &&
+        _currMinute == _maxTime.minute) {
       // selected maximum hour and minute, limit second range
       maxSecond = _maxTime.second;
     }
