@@ -6,12 +6,12 @@ class _StringsAz extends _StringsI18n {
 
   @override
   String getCancelText() {
-    return 'Отмена';
+    return 'İmtina';
   }
 
   @override
   String getDoneText() {
-    return 'Готово';
+    return 'Təstiq et';
   }
 
   @override
