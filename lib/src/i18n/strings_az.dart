@@ -48,13 +48,13 @@ class _StringsAz extends _StringsI18n {
   @override
   List<String> getWeeksShort() {
     return [
-      "пн",
-      "вт",
-      "ср",
-      "чт",
-      "пт",
-      "сб",
-      "вс",
+      "b.e.",
+      "ç.a.",
+      "ç.",
+      "c.a.",
+      "c.",
+      "ş.",
+      "b.",
     ];
   }
 
