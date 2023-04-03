@@ -52,6 +52,8 @@ part 'strings_nl.dart';
 
 part 'strings_km_kh.dart';
 
+part 'strings_az.dart';
+
 abstract class _StringsI18n {
   const _StringsI18n();
 
@@ -152,6 +154,9 @@ enum DateTimePickerLocale {
 
   /// Khmer (Cambodia)
   km_kh,
+
+  /// Azerbaijani (AZ)
+  az
 }
 
 /// Default value of date locale
@@ -185,6 +190,7 @@ const Map<DateTimePickerLocale, _StringsI18n> datePickerI18n = {
   DateTimePickerLocale.sr_latn: const _StringsSrLatin(),
   DateTimePickerLocale.nl: const _StringsNl(),
   DateTimePickerLocale.km_kh: const _StringsKmKh(),
+  DateTimePickerLocale.az: const _StringsAz(),
 };
 
 class DatePickerI18n {
