@@ -1,32 +1,58 @@
 import 'dart:math';
 
-part 'strings_ar.dart';
-part 'strings_ar_eg.dart';
-part 'strings_az.dart';
-part 'strings_bn.dart';
-part 'strings_bs.dart';
-part 'strings_cs.dart';
-part 'strings_de.dart';
 part 'strings_en_us.dart';
-part 'strings_es.dart';
-part 'strings_fr.dart';
-part 'strings_hr.dart';
-part 'strings_hu.dart';
-part 'strings_id.dart';
-part 'strings_it.dart';
-part 'strings_jp.dart';
-part 'strings_km_kh.dart';
-part 'strings_ko.dart';
-part 'strings_nl.dart';
-part 'strings_pt_br.dart';
-part 'strings_ro.dart';
-part 'strings_ru.dart';
-part 'strings_sr_cyr.dart';
-part 'strings_sr_lat.dart';
-part 'strings_tr.dart';
-part 'strings_uk.dart';
-part 'strings_vi.dart';
+
 part 'strings_zh_cn.dart';
+
+part 'strings_pt_br.dart';
+
+part 'strings_id.dart';
+
+part 'strings_ar_eg.dart';
+
+part 'strings_es.dart';
+
+part 'strings_ro.dart';
+
+part 'strings_bn.dart';
+
+part 'strings_bs.dart';
+
+part 'strings_ar.dart';
+
+part 'strings_jp.dart';
+
+part 'strings_ru.dart';
+
+part 'strings_de.dart';
+
+part 'strings_cs.dart';
+
+part 'strings_ko.dart';
+
+part 'strings_it.dart';
+
+part 'strings_hu.dart';
+
+part 'strings_hr.dart';
+
+part 'strings_uk.dart';
+
+part 'strings_tr.dart';
+
+part 'strings_vi.dart';
+
+part 'strings_fr.dart';
+
+part 'strings_sr_cyr.dart';
+
+part 'strings_sr_lat.dart';
+
+part 'strings_nl.dart';
+
+part 'strings_km_kh.dart';
+
+part 'strings_az.dart';
 
 abstract class _StringsI18n {
   const _StringsI18n();
